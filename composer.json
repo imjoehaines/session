@@ -1,0 +1,26 @@
+{
+    "name": "imjoehaines/session",
+    "description": "A simple PHP session abstraction library",
+    "keywords": ["session"],
+    "homepage": "https://github.com/imjoehaines/session",
+    "license": "Unlicense",
+    "authors": [
+        {
+            "name": "Joe Haines",
+            "email": "hello@joehaines.co.uk",
+            "homepage": "https://www.joehaines.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "scripts": {
+        "test": "phpspec run --format=pretty"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imjoehaines\\Session\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^5.1"
+    }
+}
