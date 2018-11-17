@@ -71,7 +71,7 @@ $session->set('a_string_key', 'any_value');
 
 assert($session->get('a_string_key') === 'any_value');
 
-// Throw OutOfBoundsException with message 'The key "not in the session" was not found in the session'
+// Throws OutOfBoundsException with message 'The key "not in the session" was not found in the session'
 $session->get('not in the session');
 ```
 
@@ -90,7 +90,7 @@ $session->delete('a_string_key');
 
 assert($session->has('a_string_key') === false);
 
-// Throw OutOfBoundsException with message 'The key "a_string_key" was not found in the session'
+// Throws OutOfBoundsException with message 'The key "a_string_key" was not found in the session'
 $session->delete('a_string_key');
 ```
 
