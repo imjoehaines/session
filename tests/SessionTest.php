@@ -162,4 +162,44 @@ class SessionTest extends TestCase
             $session->has('x')
         );
     }
+
+    public function testItCanClearTheSession()
+    {
+        $storage = ['a' => 'b', 'c' => 'd', 'e' => 'f'];
+
+        $session = new Session($storage);
+
+        $this->assertSame(
+            true,
+            $session->has('a')
+        );
+
+        $session->clear();
+
+        $this->assertSame(
+            false,
+            $session->has('a')
+        );
+
+        $this->assertSame(
+            [],
+            $storage
+        );
+    }
+
+    public function testItCanClearTheSessionAndStillDetectSetsFromTheOutsideWorld()
+    {
+        $storage = ['a' => 'b', 'c' => 'd', 'e' => 'f'];
+
+        $session = new Session($storage);
+
+        $session->clear();
+
+        $storage['x'] = 'y';
+
+        $this->assertSame(
+            ['x' => 'y'],
+            $storage
+        );
+    }
 }

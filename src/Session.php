@@ -68,6 +68,14 @@ class Session
     }
 
     /**
+     * @return void
+     */
+    public function clear() : void
+    {
+        $this->storage = [];
+    }
+
+    /**
      * @param string $key
      * @return OutOfBoundsException
      */
