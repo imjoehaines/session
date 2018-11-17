@@ -1,4 +1,0 @@
-suites:
-    suite:
-        namespace: Imjoehaines\Session
-        psr4_prefix: Imjoehaines\Session
