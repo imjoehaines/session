@@ -23,6 +23,15 @@ class Session
 
     /**
      * @param string $key
+     * @param mixed $value
+     */
+    public function set(string $key, $value) : void
+    {
+        $this->storage[$key] = $value;
+    }
+
+    /**
+     * @param string $key
      * @return bool
      */
     public function has(string $key) : bool
@@ -42,15 +51,6 @@ class Session
         }
 
         throw $this->notInSession($key);
-    }
-
-    /**
-     * @param string $key
-     * @param mixed $value
-     */
-    public function set(string $key, $value) : void
-    {
-        $this->storage[$key] = $value;
     }
 
     /**
