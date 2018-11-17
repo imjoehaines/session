@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace tests\Imjoehaines\Session;
 
 use OutOfBoundsException;
