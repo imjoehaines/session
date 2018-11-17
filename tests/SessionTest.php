@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace tests\Imjoehaines\Session;
+namespace Imjoehaines\Session\Tests;
 
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
@@ -10,7 +10,7 @@ use Imjoehaines\Session\Session;
 
 class SessionTest extends TestCase
 {
-    public function testItReturnsFalseForValuesNotInStorage()
+    public function testItReturnsFalseForValuesNotInStorage() : void
     {
         $storage = [];
         $session = new Session($storage);
@@ -21,7 +21,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItReturnsTrueForValuesInStorage()
+    public function testItReturnsTrueForValuesInStorage() : void
     {
         $storage = ['a' => 1];
         $session = new Session($storage);
@@ -32,7 +32,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItReturnsValueForValuesInStorage()
+    public function testItReturnsValueForValuesInStorage() : void
     {
         $storage = ['a' => 1];
         $session = new Session($storage);
@@ -43,7 +43,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItThrowsWhenTryingToGetAValueNotInStorage()
+    public function testItThrowsWhenTryingToGetAValueNotInStorage() : void
     {
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage('The key "x" was not found in the session');
@@ -54,7 +54,7 @@ class SessionTest extends TestCase
         $session->get('x');
     }
 
-    public function testItAllowsNewValuesToBeSet()
+    public function testItAllowsNewValuesToBeSet() : void
     {
         $storage = [];
         $session = new Session($storage);
@@ -76,7 +76,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItAllowsExistingValuesToBeOverwritten()
+    public function testItAllowsExistingValuesToBeOverwritten() : void
     {
         $storage = ['a' => 1];
         $session = new Session($storage);
@@ -98,7 +98,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItAllowsExistingValuesToBeRemoved()
+    public function testItAllowsExistingValuesToBeRemoved() : void
     {
         $storage = ['a' => 1];
         $session = new Session($storage);
@@ -116,7 +116,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItThrowsWhenTryingToDeleteAValueNotInStorage()
+    public function testItThrowsWhenTryingToDeleteAValueNotInStorage() : void
     {
         $this->expectException(OutOfBoundsException::class);
         $this->expectExceptionMessage('The key "x" was not found in the session');
@@ -127,7 +127,7 @@ class SessionTest extends TestCase
         $session->delete('x');
     }
 
-    public function testItDetectsSetsFromStorageInTheOutsideWorld()
+    public function testItDetectsSetsFromStorageInTheOutsideWorld() : void
     {
         $storage = ['x' => 999];
 
@@ -146,7 +146,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItDetectsDeletionsFromStorageInTheOutsideWorld()
+    public function testItDetectsDeletionsFromStorageInTheOutsideWorld() : void
     {
         $storage = ['x' => 999];
 
@@ -165,7 +165,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItCanClearTheSession()
+    public function testItCanClearTheSession() : void
     {
         $storage = ['a' => 'b', 'c' => 'd', 'e' => 'f'];
 
@@ -189,7 +189,7 @@ class SessionTest extends TestCase
         );
     }
 
-    public function testItCanClearTheSessionAndStillDetectSetsFromTheOutsideWorld()
+    public function testItCanClearTheSessionAndStillDetectSetsFromTheOutsideWorld() : void
     {
         $storage = ['a' => 'b', 'c' => 'd', 'e' => 'f'];
 

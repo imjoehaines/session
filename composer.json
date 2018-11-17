@@ -13,14 +13,25 @@
         }
     ],
     "scripts": {
-        "test": "phpunit tests"
+        "test": "composer test:unit && composer test:phpstan",
+        "test:unit": "phpunit tests",
+        "test:phpstan": "phpstan analyse src tests"
     },
     "autoload": {
         "psr-4": {
             "Imjoehaines\\Session\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Imjoehaines\\Session\\Tests\\": "tests/"
+        }
+    },
     "require-dev": {
-        "phpunit/phpunit": "7.4.4"
+        "phpunit/phpunit": "7.4.4",
+        "phpstan/phpstan": "0.10.5",
+        "phpstan/phpstan-doctrine": "0.10.0",
+        "phpstan/phpstan-deprecation-rules": "0.10.2",
+        "phpstan/phpstan-strict-rules": "0.10.1"
     }
 }
