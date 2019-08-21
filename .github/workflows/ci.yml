@@ -1,5 +1,3 @@
-
-
 name: CI
 
 on: [push]
@@ -13,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Composer dependencies
-      run: php${{ matrix.php }} composer install
+      run: php${{ matrix.php }} $(which composer) install
     - name: Run tests
-      run: php${{ matrix.php }} composer test
+      run: php${{ matrix.php }} $(which composer) test
