@@ -1,6 +1,6 @@
 # session
 
-A simple, zero dependency PHP session abstraction library
+A simple, zero dependency PHP session abstraction library for PHP 7.2+
 
 ## Usage
 
