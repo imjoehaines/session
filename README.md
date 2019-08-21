@@ -1,4 +1,4 @@
-# session
+# session <a href="https://github.com/imjoehaines/session"><img alt="GitHub Actions status" src="https://github.com/imjoehaines/session/workflows/CI/badge.svg"></a>
 
 A simple, zero dependency PHP session abstraction library for PHP 7.2+
 
