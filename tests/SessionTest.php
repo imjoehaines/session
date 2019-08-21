@@ -200,8 +200,8 @@ class SessionTest extends TestCase
         $storage['x'] = 'y';
 
         $this->assertSame(
-            ['x' => 'y'],
-            $storage
+            'y',
+            $session->get('x')
         );
     }
 }
