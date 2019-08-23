@@ -1,9 +1,9 @@
-name: CI
+name: PHPStan
 
 on: [push]
 
 jobs:
-  phpunit:
+  phpstan:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Composer dependencies
       run: php${{ matrix.php }} $(which composer) install
-    - name: Run tests
-      run: php${{ matrix.php }} $(which composer) test
+    - name: Run PHPStan
+      run: php${{ matrix.php }} $(which composer) test:phpstan
