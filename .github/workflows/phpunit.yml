@@ -1,0 +1,16 @@
+name: PHPUnit
+
+on: [push]
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [7.2, 7.3]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Composer dependencies
+      run: php${{ matrix.php }} $(which composer) install --prefer-dist --no-progress --no-suggest
+    - name: Run PHPUnit
+      run: php${{ matrix.php }} $(which composer) test:unit
